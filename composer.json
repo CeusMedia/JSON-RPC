@@ -1,0 +1,16 @@
+{
+    "name": "ceus-media/json-rpc",
+    "description": "Implementation of JSON RPC server and client to start with.",
+    "type": "library",
+    "require": {
+        "ceus-media/common": "^0.8"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Christian Würker",
+            "email": "christian.wuerker@ceusmedia.de"
+        }
+    ],
+    "minimum-stability": "dev"
+}
