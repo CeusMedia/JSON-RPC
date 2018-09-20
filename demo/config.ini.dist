@@ -1,0 +1,4 @@
+host		= "localhost"
+port		= "80"
+path		= "/path/to/server/"
+

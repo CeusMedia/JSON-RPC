@@ -1,5 +1,6 @@
 <?php
-require_once '../../vendor/autoload.php';
+if( !@include_once '../../vendor/autoload.php' )
+	die( 'Please install using composer, first!' );
 require_once '../../src/Server.php';
 new \UI_DevOutput;
 

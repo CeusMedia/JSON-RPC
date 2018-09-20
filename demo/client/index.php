@@ -1,14 +1,21 @@
 <?php
-require_once '../../vendor/autoload.php';
+if( !@include_once '../../vendor/autoload.php' )
+	die( 'Please install using composer, first!' );
 require_once '../../src/Client.php';
 require_once '../../src/Caller.php';
 new \UI_DevOutput;
 
-$host		= 'localhost';
-$path		= 'labs/JsonRpc/demo/server/';
+if( !file_exists( '../config.ini' ) )
+	die( 'No config file existing.' );
+$config		= (object) parse_ini_file( '../config.ini' );
+
+$host		= $config->host.':'.$config->port;
+$path		= $config->path;
 
 $client		= new \CeusMedia\JsonRpc\Client( $host, $path );
 $response	= $client->request( 'date', array( 'format' => 'r' ) );
+
+print_m( $response );die;
 
 $caller		= new \CeusMedia\JsonRpc\Caller( $host, $path );
 $result		= $caller->date( 'r' );
